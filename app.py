@@ -150,7 +150,7 @@ def index(request):
     else:
         if not global_state["INITIALIZED"]:
             _setup(request)
-        return templates.TemplateResponse('index_3.html', {'request': request, 'blogs':  aws.scanBlogs()})
+        return templates.TemplateResponse('index.html', {'request': request})
 
 def headers(request):
     return JSONResponse(dumps({k:v for k, v in request.headers.items()}))
